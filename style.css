@@ -1,22 +1,143 @@
+/* Existing styles, will be adapted */
 body {
     background-color: #e0f0ff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    flex-direction: column; /* Stack calculator and history vertically */
+    font-family: Arial, sans-serif;
+    margin: 0;
 }
 
-input[type="text"] {
-    border: 1px solid #007bff;
+#calculator-container {
+    border: 2px solid #0056b3; /* Darker blue border */
+    padding: 20px;
+    background-color: #f0f8ff; /* Very light blue, almost white */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px; /* Space between calculator and history */
+}
+
+#display {
+    width: calc(100% - 16px); /* Full width minus padding */
+    font-size: 2em;
+    text-align: right;
     padding: 8px;
+    border: 1px solid #007bff;
+    background-color: #ffffff;
     border-radius: 4px;
+    margin-bottom: 15px;
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
 }
 
-input[type="button"] {
-    background-color: #007bff;
-    color: white;
-    padding: 10px 15px;
-    border-radius: 4px;
-    border: none;
+/* Styling for the divs containing rows of buttons */
+#calculator-container > div {
+    display: flex;
+    justify-content: space-between; /* Distribute buttons evenly in the row */
+    margin-bottom: 10px; /* Space between button rows */
 }
 
-label#output {
+#calculator-container > div:last-child {
+    margin-bottom: 0; /* No margin for the last row (equals button) */
+}
+
+/* General button styling */
+button {
+    padding: 15px;
     font-size: 1.2em;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    flex-grow: 1; /* Allow buttons to grow and fill space */
+    margin: 0 5px; /* Spacing between buttons in a row */
+}
+
+button:first-child {
+    margin-left: 0;
+}
+
+button:last-child {
+    margin-right: 0;
+}
+
+
+.number-btn {
+    background-color: #cce7ff; /* Lighter blue */
+    color: #003366; /* Dark blue text */
+}
+
+.number-btn:hover {
+    background-color: #b3d9ff;
+}
+
+.operator-btn {
+    background-color: #007bff; /* Standard blue */
+    color: white;
+}
+
+.operator-btn:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
+
+/* Specific styling for AC and = buttons if needed, for now they use operator-btn */
+#btn-clear {
+    background-color: #ffc107; /* Amber for AC */
+    color: #333;
+}
+#btn-clear:hover {
+    background-color: #e0a800;
+}
+
+#btn-equals {
+    background-color: #28a745; /* Green for equals */
+    color: white;
+    width: 100%; /* Make equals button span full width if it's in its own div */
+}
+#btn-equals:hover {
+    background-color: #1e7e34;
+}
+
+
+#history-container {
+    width: 300px; /* Similar width to calculator or adjust as needed */
+    max-height: 150px;
+    overflow-y: auto;
+    border: 1px solid #007bff;
+    padding: 10px;
+    background-color: #f0f8ff;
+    border-radius: 5px;
+    font-size: 0.9em;
     color: #003366;
 }
+
+#history-container h3 {
+    margin-top: 0;
+    color: #0056b3;
+    text-align: center;
+}
+
+#history-container ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+#history-container li {
+    padding: 5px 0;
+    border-bottom: 1px dashed #b3d9ff;
+}
+
+#history-container li:last-child {
+    border-bottom: none;
+}
+
+/* Remove old label#output style as it's no longer in HTML */
+/* label#output {
+    font-size: 1.2em; color: #003366;
+} */
+
+/* Remove old input[type=button] and input[type=text] if they are fully replaced by new styles */
+/* input[type="text"] { ... } */
+/* input[type="button"] { ... } */
