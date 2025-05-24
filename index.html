@@ -3,18 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Calculator</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    
-    <input type="text" placeholder="Number 01" id="number01">
-    <input type="text" placeholder="Number 02" id="number02">
-    <input type="text" placeholder="Operator" id="op">
+    <div id="calculator-container">
+        <input type="text" id="display" readonly>
 
-    <input type="button" value="calc" id="btn" onclick="calc()">
+        <div>
+            <button id="btn-7" class="number-btn">7</button>
+            <button id="btn-8" class="number-btn">8</button>
+            <button id="btn-9" class="number-btn">9</button>
+            <button id="btn-divide" class="operator-btn">/</button>
+        </div>
+        <div>
+            <button id="btn-4" class="number-btn">4</button>
+            <button id="btn-5" class="number-btn">5</button>
+            <button id="btn-6" class="number-btn">6</button>
+            <button id="btn-multiply" class="operator-btn">*</button>
+        </div>
+        <div>
+            <button id="btn-1" class="number-btn">1</button>
+            <button id="btn-2" class="number-btn">2</button>
+            <button id="btn-3" class="number-btn">3</button>
+            <button id="btn-subtract" class="operator-btn">-</button>
+        </div>
+        <div>
+            <button id="btn-0" class="number-btn">0</button>
+            <button id="btn-decimal" class="operator-btn">.</button>
+            <button id="btn-clear" class="operator-btn">AC</button>
+            <button id="btn-add" class="operator-btn">+</button>
+        </div>
+        <div>
+            <button id="btn-equals" class="operator-btn">=</button>
+        </div>
+    </div>
 
-    <label for="" id="output"></label>
+    <div id="history-container">
+        <!-- History items will be added here by JavaScript -->
+    </div>
 
     <script src="app.js"></script>
 </body>
