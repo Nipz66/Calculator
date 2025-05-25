@@ -141,3 +141,29 @@ button:last-child {
 /* Remove old input[type=button] and input[type=text] if they are fully replaced by new styles */
 /* input[type="text"] { ... } */
 /* input[type="button"] { ... } */
+
+/* Header Styles */
+header {
+    background-color: #007bff; /* Primary blue */
+    color: #ffffff;
+    padding: 1em 0; /* 1em top/bottom, 0 left/right as text-align centers content */
+    text-align: center;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 1.8em; /* Adjusted font size */
+}
+
+/* Footer Styles */
+footer {
+    background-color: #0056b3; /* Darker blue */
+    color: #f0f0f0; /* Light grey for text */
+    padding: 1em 0;
+    text-align: center;
+    width: 100%;
+    box-sizing: border-box;
+    margin-top: auto; /* Pushes footer to the bottom */
+}
