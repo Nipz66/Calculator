@@ -16,7 +16,8 @@ body {
     background-color: #f0f8ff; /* Very light blue, almost white */
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    margin-bottom: 20px; /* Space between calculator and history */
+    margin-top: 20px; /* Space from header */
+    margin-bottom: 20px; /* Space between calculator and history / footer */
 }
 
 #display {
