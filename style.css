@@ -133,6 +133,36 @@ button:last-child {
     border-bottom: none;
 }
 
+/* Animation styles */
+#animation-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    overflow: hidden;
+}
+
+@keyframes fallingNumbers {
+    0% {
+        top: -10%;
+        opacity: 1;
+    }
+    100% {
+        top: 110%;
+        opacity: 0;
+    }
+}
+
+.animated-number {
+    position: absolute;
+    color: rgba(0, 123, 255, 0.1);
+    font-size: 2rem;
+    user-select: none;
+    animation: fallingNumbers 10s linear infinite;
+}
+
 /* Remove old label#output style as it's no longer in HTML */
 /* label#output {
     font-size: 1.2em; color: #003366;

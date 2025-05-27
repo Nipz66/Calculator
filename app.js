@@ -1,4 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
+    const animationContainer = document.getElementById('animation-container');
     const display = document.getElementById('display');
     const historyContainer = document.getElementById('history-container'); // Added
     const numberButtons = document.querySelectorAll('.number-btn');
@@ -178,4 +179,33 @@ document.addEventListener('DOMContentLoaded', () => {
         // Initialize display and history display when the script loads
     updateDisplay();
         updateHistoryDisplay(); // Added
+
+    // Background Animation Logic
+    function createAnimatedNumber() {
+        if (!animationContainer) return; // Don't run if container not found
+
+        const numberEl = document.createElement('span');
+        numberEl.textContent = Math.floor(Math.random() * 10).toString();
+        numberEl.classList.add('animated-number');
+        numberEl.style.left = Math.random() * 100 + 'vw';
+        numberEl.style.animationDuration = (Math.random() * 5 + 5) + 's'; // 5 to 10 seconds
+        numberEl.style.animationDelay = Math.random() * 5 + 's'; // 0 to 5 seconds
+
+        animationContainer.appendChild(numberEl);
+
+        numberEl.addEventListener('animationend', () => {
+            numberEl.remove();
+        });
+    }
+
+    function startBackgroundAnimation() {
+        if (!animationContainer) {
+            console.warn("Animation container not found. Skipping background animation.");
+            return;
+        }
+        createAnimatedNumber(); // Create one immediately
+        setInterval(createAnimatedNumber, 1000); // Create a new one every second
+    }
+
+    startBackgroundAnimation(); // Start the animation
 });
